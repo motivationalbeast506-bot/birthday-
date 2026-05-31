@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday Noor ✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#070b14;
+    --bg2:#0d1220;
+    --card:rgba(255,255,255,.07);
+    --border:rgba(255,255,255,.12);
+    --text:#f5f7ff;
+    --muted:#b7bfd8;
+    --pink:#ff4fa3;
+    --purple:#8b5cf6;
+    --cyan:#39dfff;
+    --gold:#ffd166;
+    --shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+    radial-gradient(circle at 20% 20%, rgba(139,92,246,.25), transparent 25%),
+    radial-gradient(circle at 80% 30%, rgba(57,223,255,.18), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(255,79,163,.18), transparent 30%),
+    var(--bg);
+    color:var(--text);
+    font-family:Inter,sans-serif;
+    overflow-x:hidden;
+}
+
+/* ---------- Animated Background ---------- */
+
+.stars{
+    position:fixed;
+    inset:0;
+    z-index:-3;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:white;
+    animation:twinkle 4s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:.2}
+    50%{opacity:1}
+}
+
+.grid{
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:40px 40px;
+    mask-image:radial-gradient(circle at center, black 40%, transparent 90%);
+    z-index:-2;
+}
+
+.glow{
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+    opacity:.35;
+}
+
+.glow1{
+    background:#8b5cf6;
+    top:-100px;
+    left:-100px;
+    animation:float 12s infinite ease-in-out;
+}
+
+.glow2{
+    background:#ff4fa3;
+    right:-120px;
+    bottom:-120px;
+    animation:float 14s infinite ease-in-out reverse;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-50px) translateX(40px);
+    }
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px;
+    position:relative;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.badge{
+    display:inline-block;
+    padding:12px 22px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.04);
+    backdrop-filter:blur(20px);
+    border-radius:999px;
+    color:var(--muted);
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(3rem,8vw,7rem);
+    line-height:1;
+    margin-bottom:20px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,var(--pink),var(--cyan));
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    font-size:1.25rem;
+    color:var(--muted);
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.btn{
+    margin-top:35px;
+    display:inline-flex;
+    gap:10px;
+    align-items:center;
+    padding:16px 28px;
+    border:none;
+    border-radius:18px;
+    cursor:pointer;
+    font-weight:700;
+    color:white;
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+    box-shadow:0 15px 35px rgba(255,79,163,.35);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.03);
+}
+
+/* ---------- Sections ---------- */
+
+section{
+    padding:120px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:clamp(2rem,5vw,4rem);
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:var(--muted);
+}
+
+.glass{
+    background:var(--card);
+    border:1px solid var(--border);
+    backdrop-filter:blur(25px);
+    border-radius:30px;
+    box-shadow:var(--shadow);
+}
+
+/* ---------- Message ---------- */
+
+.message{
+    max-width:1000px;
+    margin:auto;
+    padding:50px;
+}
+
+.message p{
+    font-size:1.15rem;
+    color:#dce3ff;
+    line-height:2;
+}
+
+/* ---------- Memory Cards ---------- */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:24px;
+}
+
+.card{
+    padding:30px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+/* ---------- Timeline ---------- */
+
+.timeline{
+    max-width:900px;
+    margin:auto;
+    position:relative;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    width:2px;
+    height:100%;
+    background:linear-gradient(var(--pink),var(--cyan));
+}
+
+.step{
+    width:50%;
+    padding:25px;
+    position:relative;
+}
+
+.step:nth-child(odd){
+    left:0;
+}
+
+.step:nth-child(even){
+    left:50%;
+}
+
+.step-box{
+    padding:25px;
+}
+
+.step-box h4{
+    margin-bottom:10px;
+}
+
+/* ---------- Birthday Wish ---------- */
+
+.wish{
+    text-align:center;
+}
+
+.big-text{
+    font-size:clamp(2.5rem,6vw,5rem);
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.typewriter{
+    min-height:80px;
+    color:var(--gold);
+    font-size:1.4rem;
+}
+
+/* ---------- Floating Hearts ---------- */
+
+.heart{
+    position:fixed;
+    font-size:20px;
+    pointer-events:none;
+    animation:rise 5s linear forwards;
+}
+
+@keyframes rise{
+    from{
+        transform:translateY(0) scale(.5);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-300px) scale(1.8);
+        opacity:0;
+    }
+}
+
+/* ---------- Music Button ---------- */
+
+.music-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:50;
+    border:none;
+    background:rgba(255,255,255,.08);
+    color:white;
+    backdrop-filter:blur(20px);
+    border-radius:16px;
+    padding:14px 18px;
+    cursor:pointer;
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+    text-align:center;
+    padding:80px 20px;
+}
+
+footer h2{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+footer p{
+    color:var(--muted);
+}
+
+/* ---------- Reveal ---------- */
+
+.reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:none;
+}
+
+@media(max-width:800px){
+
+.timeline::before{
+    left:20px;
+}
+
+.step{
+    width:100%;
+    left:0 !important;
+    padding-left:60px;
+}
+
+.message{
+    padding:30px;
+}
+
+}
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="grid"></div>
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<button class="music-btn" id="musicBtn">🎵 Music</button>
+
+<!-- HERO -->
+
+<section class="hero">
+    <div class="hero-content reveal active">
+        <div class="badge">✨ A Special Birthday Experience ✨</div>
+
+        <h1>
+            Happy Birthday
+            <span class="gradient">Noor</span>
+        </h1>
+
+        <p>
+            Today isn't just another day.
+            It's a celebration of your smile, your kindness,
+            your dreams, and the beautiful light you bring into the world.
+        </p>
+
+        <button class="btn" onclick="document.getElementById('message').scrollIntoView()">
+            Begin the Journey 💜
+        </button>
+    </div>
+</section>
+
+<!-- MESSAGE -->
+
+<section id="message">
+    <div class="section-title reveal">
+        <h2>A Letter For You</h2>
+        <p>Written from the heart.</p>
+    </div>
+
+    <div class="message glass reveal">
+        <p>
+            Dear Noor,
+            <br><br>
+            On your special day, I hope you realize how truly amazing you are.
+            Your presence has a way of making ordinary moments feel meaningful.
+            Your smile can brighten difficult days, and your heart carries a warmth
+            that leaves a lasting impression on everyone lucky enough to know you.
+            <br><br>
+            May this year bring unforgettable adventures,
+            beautiful memories, endless laughter, and every success you've ever dreamed of.
+            May happiness find you in the smallest moments,
+            and may your future shine brighter than ever before.
+            <br><br>
+            Happy Birthday, Noor.
+            Today, the world feels a little more beautiful simply because it's your day. 💖
+        </p>
+    </div>
+</section>
+
+<!-- MEMORIES -->
+
+<section>
+    <div class="section-title reveal">
+        <h2>Reasons You're Special</h2>
+        <p>Just a few among many.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card glass reveal">
+            <h3>🌷 Kind Heart</h3>
+            <p>Your kindness has a way of making people feel valued and appreciated.</p>
+        </div>
+
+        <div class="card glass reveal">
+            <h3>✨ Beautiful Soul</h3>
+            <p>You bring warmth, positivity, and genuine light wherever you go.</p>
+        </div>
+
+        <div class="card glass reveal">
+            <h3>🌙 Inspiring Spirit</h3>
+            <p>Your determination and dreams inspire everyone around you.</p>
+        </div>
+
+        <div class="card glass reveal">
+            <h3>💫 Unforgettable Smile</h3>
+            <p>A smile that can instantly make the world feel brighter.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TIMELINE -->
+
+<section>
+    <div class="section-title reveal">
+        <h2>Your Next Chapter</h2>
+        <p>A beautiful future awaits.</p>
+    </div>
+
+    <div class="timeline">
+
+        <div class="step reveal">
+            <div class="step-box glass">
+                <h4>🎂 Today</h4>
+                <p>Celebrate yourself and everything you've achieved.</p>
+            </div>
+        </div>
+
+        <div class="step reveal">
+            <div class="step-box glass">
+                <h4>🌸 New Memories</h4>
+                <p>Fill your days with laughter, adventures, and joy.</p>
+            </div>
+        </div>
+
+        <div class="step reveal">
+            <div class="step-box glass">
+                <h4>⭐ New Dreams</h4>
+                <p>Chase goals fearlessly and believe in your potential.</p>
+            </div>
+        </div>
+
+        <div class="step reveal">
+            <div class="step-box glass">
+                <h4>💖 Endless Happiness</h4>
+                <p>May every chapter ahead be filled with love and success.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- WISH -->
+
+<section class="wish">
+    <div class="glass reveal" style="max-width:1000px;margin:auto;padding:60px;">
+        <div class="big-text gradient">
+            Noor, You Deserve The Best.
+        </div>
+
+        <div class="typewriter" id="typewriter"></div>
+
+        <button class="btn" id="heartBtn">
+            Send Birthday Love 💗
+        </button>
+    </div>
+</section>
+
+<footer>
+    <h2 class="gradient">Happy Birthday Noor 🎉</h2>
+    <p>Made with love, admiration, and best wishes for your brightest year yet.</p>
+</footer>
+
+<audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_bf0b57e1ca.mp3?filename=beautiful-piano-ambient-110624.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* Stars */
+
+const stars=document.getElementById("stars");
+
+for(let i=0;i<180;i++){
+    const s=document.createElement("div");
+    s.classList.add("star");
+    s.style.left=Math.random()*100+"%";
+    s.style.top=Math.random()*100+"%";
+    s.style.animationDelay=Math.random()*5+"s";
+    stars.appendChild(s);
+}
+
+/* Reveal */
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+});
+},{threshold:.15});
+
+document.querySelectorAll(".reveal").forEach(el=>{
+observer.observe(el);
+});
+
+/* Typewriter */
+
+const text=
+"May your year be filled with happiness, success, peace, unforgettable adventures, and countless reasons to smile every day. ✨";
+
+let i=0;
+
+function type(){
+    if(i<text.length){
+        document.getElementById("typewriter").innerHTML+=text.charAt(i);
+        i++;
+        setTimeout(type,40);
+    }
+}
+
+setTimeout(type,1200);
+
+/* Hearts */
+
+document.getElementById("heartBtn").addEventListener("click",()=>{
+
+for(let i=0;i<25;i++){
+
+setTimeout(()=>{
+
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML=["💖","💗","💕","💘","✨"][Math.floor(Math.random()*5)];
+
+heart.style.left=(window.innerWidth/2 + (Math.random()*300-150))+"px";
+heart.style.bottom="120px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+
+},i*120);
+
+}
+
+});
+
+/* Music */
+
+const music=document.getElementById("bgMusic");
+const musicBtn=document.getElementById("musicBtn");
+
+let playing=false;
+
+musicBtn.addEventListener("click",()=>{
+
+if(!playing){
+music.play();
+musicBtn.innerHTML="🔊 Playing";
+playing=true;
+}else{
+music.pause();
+musicBtn.innerHTML="🎵 Music";
+playing=false;
+}
+
+});
+
+/* Cursor Glow */
+
+document.addEventListener("mousemove",(e)=>{
+document.documentElement.style.setProperty("--x",e.clientX+"px");
+document.documentElement.style.setProperty("--y",e.clientY+"px");
+});
+
+</script>
+
+</body>
+</html>
